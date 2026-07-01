@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d1324">
+<title>Pixel Omakase</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app-shell">
+<section id="startScreen" class="screen start-screen">
+<div class="paper-lantern">お</div>
+<p class="eyebrow">ENGLISH ORDER CHALLENGE</p>
+<h1>PIXEL<br>OMAKASE</h1>
+<p class="subtitle">Read the order and drag the correct food to the plate.</p>
+<form id="studentForm" class="student-form">
+<label><span>Name</span><input id="studentName" maxlength="40" required></label>
+<div class="form-row">
+<label><span>Class</span><input id="studentClass" maxlength="20" required></label>
+<label><span>Class No.</span><input id="studentNumber" inputmode="numeric" maxlength="10" required></label>
+</div>
+<p class="privacy-note">Student details and the final score are included in the teacher result.</p>
+<button class="pixel-button primary" type="submit">START GAME</button>
+</form>
+<div class="how-to-play"><strong>How to play</strong><span>1. Read “I would like …”</span><span>2. Drag food onto the plate</span><span>3. Tap SERVE</span></div>
+</section>
+<section id="gameScreen" class="screen game-screen hidden">
+<header class="hud"><div class="hud-chip">🪙 <b id="coinCount">0</b></div><div class="question-counter">ORDER <b id="questionNumber">1</b>/15</div><button id="musicButton" class="icon-button" type="button">♫</button></header>
+<section class="restaurant-scene">
+<div class="noren"><span>お</span><span>ま</span><span>か</span><span>せ</span></div>
+<div class="customer-wrap"><div id="customer" class="customer"><div class="customer-hair"></div><div class="customer-face"><i></i><i></i><em></em></div><div class="customer-body"></div></div><div class="speech-bubble"><span class="speech-label">CUSTOMER SAYS</span><p id="orderSentence">“I would like sushi.”</p><button id="speakButton" class="speak-button" type="button">🔊 Read</button></div></div>
+<div class="counter"><div id="plate" class="plate-zone"><div id="plateItems" class="plate-items"></div><span id="plateHint" class="plate-hint">DRAG FOOD HERE</span></div><div class="counter-actions"><button id="clearButton" class="pixel-button small secondary" type="button">CLEAR</button><button id="serveButton" class="pixel-button small primary" type="button">SERVE</button></div></div>
+</section>
+<section class="menu-panel"><div class="menu-heading"><div><p>OMAKASE MENU</p><small id="unlockText">Earn 30 coins to unlock more food!</small></div><span id="menuLevel" class="level-badge">LEVEL 1</span></div><div id="foodGrid" class="food-grid"></div></section>
+<div id="toast" class="toast"></div>
+</section>
+<section id="resultScreen" class="screen result-screen hidden">
+<div class="result-stamp">完</div><p class="eyebrow">OMAKASE COMPLETE</p><h2 id="resultTitle">Well done!</h2>
+<div class="score-card"><div><span>Coins</span><b id="finalCoins">0</b></div><div><span>Correct</span><b id="finalCorrect">0/15</b></div><div><span>Accuracy</span><b id="finalAccuracy">0%</b></div></div>
+<p id="emailStatus" class="email-status">Preparing the teacher result…</p>
+<a id="emailFallback" class="pixel-button secondary hidden" href="#">EMAIL RESULT</a>
+<button id="downloadButton" class="pixel-button secondary" type="button">DOWNLOAD RESULT</button>
+<button id="playAgainButton" class="pixel-button primary" type="button">PLAY AGAIN</button>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
